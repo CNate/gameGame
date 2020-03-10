@@ -2,24 +2,26 @@ import pygame
 from pygame.constants import *
 
 
-def handleEvents():
+def handleEvents(state):
     event = pygame.event.poll()
     if event.type != pygame.NOEVENT:
         print(event)
 
     if event.type == pygame.QUIT:
-        pygame.quit()
+        state['AppIsRunning'] = False
 
 
 def main():
-    AppIsRunning = True
+    state = {'AppIsRunning': True}
     pygame.init()
+    arrr = 5
+    print(f'{arrr} is a number')
 
     if not pygame.display.get_init():
         print("display not initialized...")
-    screen = pygame.display.set_mode([600, 480])
-    while (AppIsRunning):
-        handleEvents()
+    screen = pygame.display.set_mode([640, 480])
+    while (state['AppIsRunning']):
+        handleEvents(state)
 
 
 if __name__ == "__main__":
