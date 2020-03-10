@@ -14,8 +14,6 @@ def handleEvents(state):
 def main():
     state = {'AppIsRunning': True}
     pygame.init()
-    arrr = 5
-    print(f'{arrr} is a number')
 
     if not pygame.display.get_init():
         print("display not initialized...")
